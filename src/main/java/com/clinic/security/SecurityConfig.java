@@ -32,6 +32,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/doctor/**").permitAll()
                         .requestMatchers("/api/clinics/**").permitAll()
                         .requestMatchers("/api/appointments/**").permitAll()
+                        .requestMatchers("/api/feedbacks/**").permitAll()
                         // dashboard requires a valid JWT
                         .requestMatchers("/api/doctor/**").authenticated()
                         .anyRequest().authenticated()

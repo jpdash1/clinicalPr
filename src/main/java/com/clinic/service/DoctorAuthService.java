@@ -112,7 +112,9 @@ public class DoctorAuthService {
         try {
             if (o.getCreatedAt() == null) return null;
             // If createdAt field is Instant (as in updated entity):
-            if (o.getCreatedAt() instanceof Instant instant) return instant;
+            if (o.getCreatedAt() instanceof Instant) {
+                return (Instant) o.getCreatedAt();
+            }
         } catch (Exception ignored) {}
         // For Timestamp version:
         // return o.getCreatedAt().toInstant();
