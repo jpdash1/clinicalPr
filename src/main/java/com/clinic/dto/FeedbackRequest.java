@@ -7,7 +7,8 @@ public class FeedbackRequest {
     private Long appointmentId;
 
     @NotBlank(message = "Mobile number is required")
-    @Pattern(regexp = "^\\d{10}$", message = "Mobile must be 10 digits")
+    @Pattern(regexp = "^[\\d\\s\\-\\+\\(\\)]+$", message = "Mobile number contains invalid characters")
+    @Size(min = 10, max = 20, message = "Mobile number must be between 10 and 20 characters")
     private String mobile;
 
     @NotBlank(message = "Full name is required")
